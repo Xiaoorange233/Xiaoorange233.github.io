@@ -4,7 +4,8 @@
 }
 
 body {
-    background-image: linear-gradient(to left, rgba(40, 199, 111, 0.2), rgba(144, 247, 236, 0.2)), url(../img/bg.jpg);
+    background-color: #FAFAFA;
+    background-image: url(../img/bg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
