@@ -1,6 +1,14 @@
 * {
     margin: 0;
     padding: 0;
+	font-family: English;
+}
+
+@font-face {
+    font-family: 'English';
+    src: url("../css/font.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
 }
 
 body {
@@ -79,18 +87,15 @@ body {
 }
 
 .meBox-title p {
-    font-size: 1.2rem;
-    border-right: .2em solid;
-    width: 15ch;
-    white-space: nowrap;
+    font-size: 2rem;
+    width: 12ch;
     overflow: hidden;
-    animation: typing 2s steps(20, end), blink-caret .3s step-end infinite alternate;
-    margin: -30px 0 0 75px;
+    margin:-45px auto -10px;
     transition: all 0.3s;
 }
 
 .meBox:hover .meBox-title p {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
 }
 
 .meBox-title .fg {
@@ -159,7 +164,7 @@ body {
     margin-top: 10px;
 }
 
-#cmdBox {
+#explorerBox {
     width: 710px;
     height: 550px;
     float: right;
@@ -167,7 +172,7 @@ body {
     /* background-color: green; */
 }
 
-.cmd {
+.explorer {
     width: 600px;
     height: 400px;
     border-radius: 10px 10px 5px 5px;
@@ -181,7 +186,7 @@ body {
     left: 0;
 }
 
-.cmd:hover {
+.explorer:hover {
     width: 610px;
     height: 410px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -189,65 +194,76 @@ body {
     z-index: 1;
 }
 
-.cmd .title {
+.explorer .title {
     width: 100%;
     height: 25px;
-    background-image: linear-gradient(to top, rgb(184, 184, 184), white);
+	background-color: rgba(255, 255, 255, 0.9);
     font-size: 14px;
     line-height: 25px;
 }
 
-.cmd .title span {
+.explorer .title span {
     display: inline-block;
-    width: 70%;
-    text-align: center;
+	vertical-align: middle;
+	margin: 0 2ch 0;
+	font-size: 1ch
     /* background-color: red; */
 }
 
-.cmd .click {
-    margin-left: 10px;
-    float: left;
+.explorer .top {
+    width: 100%;
+    height: 25px;
+	background-color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    line-height: 25px;
 }
 
-.cmd .click div {
+.explorer .top span {
+    display: inline-block;
+	vertical-align: middle;
+	padding:0 1ch;
+	font-size: 1ch
+    /* background-color: red; */
+}
+
+.explorer .top span:hover {
+    background-color: #f1f2f6;
+}
+
+.explorer .click {
+    margin-right: 10px;
+    float: right;
+}
+
+.explorer .click div {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     margin: 8px 0 0 10px;
-    float: left;
+    float: right;
 }
 
-.cmd .click .red {
+.explorer .click .red {
     background-color: #ff1b22;
     box-shadow: 0 0 1px #ff1b22;
 }
 
-.cmd .click .red:hover {
+.explorer .click .red:hover {
     background-color: #ff6268;
     box-shadow: 0 0 3px #ff1b22;
 }
 
-.cmd .click .yellow {
-    background-color: #ffaf00;
-    box-shadow: 0 0 1px #ffaf00;
+.explorer .click .light {
+    background-color: #ced6e0;
+    box-shadow: 0 0 1px #ced6e0;
 }
 
-.cmd .click .yellow:hover {
-    background-color: #ffd373;
-    box-shadow: 0 0 3px #ffaf00;
+.explorer .click .light:hover {
+    background-color: #dfe4ea;
+    box-shadow: 0 0 3px #ced6e0;
 }
 
-.cmd .click .green {
-    background-color: #00931a;
-    box-shadow: 0 0 1px #00931a;
-}
-
-.cmd .click .green:hover {
-    background-color: rgb(0, 196, 36);
-    box-shadow: 0 0 3px #00931a;
-}
-
-.cmdText {
+.explorerData {
     padding-top: 10px;
     padding-left: 15px;
 }
@@ -285,7 +301,7 @@ body {
         margin: 95px 0 0 2.5%;
     }
 
-    #cmdBox {
+    #explorerBox {
         margin-right: 3%;
     }
 }
@@ -303,7 +319,7 @@ body {
         margin: 95px auto 95px;
     }
 
-    #cmdBox {
+    #explorerBox {
         float: none;
         margin: 0 auto 100px;
     }
@@ -349,17 +365,17 @@ body {
         width: 150px;
     }
 
-    #cmdBox {
+    #explorerBox {
         width: 100%;
         height: 850px;
     }
 
-    .cmd {
+    .explorer {
         width: 90%;
         margin: 0 auto;
     }
 
-    .cmd:hover {
+    .explorer:hover {
         width: 90%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
         margin: 0 auto;
