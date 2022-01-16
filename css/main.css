@@ -264,8 +264,7 @@ body {
 }
 
 .explorerData {
-    padding-top: 10px;
-    padding-left: 15px;
+	margin: 10px 15px;
 }
 
 #footer {
