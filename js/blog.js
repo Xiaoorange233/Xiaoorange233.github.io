@@ -47,8 +47,8 @@ function getbody(){
 					url : "https://api.github.com/markdown",
 					data: JSON.stringify({'text':data.body}),
 					dataType : "html",
-					success : function(data) {
-						$("#blog_body").html(data);
+					success : function(res) {
+						$("#blog_body").html('<h3>'+data.title+'<h3><p>创建时间：'+data.created_at+'<br>最后修改时间：'+data.updated_at+'</p><hr>'+res);
 					},
 					error : function(data) {
 						if(data.status == 403){
@@ -89,8 +89,10 @@ function getbody(){
 				$("#blog_body").html('<h3>无法连接至服务器，请检查网络设置</h3>');
 				return;
 			}else if(data.status == 404){
-				alert('系统异常，请稍后再试');
-				$("#blog_body").html('<h3>系统异常，请稍后再试</h3>');
+				$("#blog_body").html('<h3>文章不存在</h3>');
+				return;
+			}else if(data.status == 410){
+				$("#blog_body").html('<h3>文章已被删除</h3>');
 				return;
 			}else if(data.status == 200){
 				alert('系统异常，请重新刷新后再试');
