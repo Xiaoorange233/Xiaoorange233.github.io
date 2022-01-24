@@ -48,7 +48,12 @@ function getbody(){
 					data: JSON.stringify({'text':data.body}),
 					dataType : "html",
 					success : function(res) {
-						$("#blog_body").html('<h3>'+data.title+'<h3><p>创建时间：'+data.created_at+'<br>最后修改时间：'+data.updated_at+'</p><hr>'+res);
+						var d=new Date(data.created_at);
+						var ctime=d.getFullYear()+'-'+d.getMonth()+1+'-'+d.getDate()+' '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds();
+						var d=new Date(data.updated_at);
+						var ltime=d.getFullYear()+'-'+d.getMonth()+1+'-'+d.getDate()+' '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds();
+
+						$("#blog_body").html('<h3>'+data.title+'</h3><p>创建时间：'+ctime+'<br>最后修改时间：'+ltime+'</p><hr>'+res);
 					},
 					error : function(data) {
 						if(data.status == 403){
