@@ -8,21 +8,26 @@
 		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="./css/perload.css">
 		<script src="./js/jquery.min.js"></script>
-		<script src="./js/preload.js"></script>
 		<title>晓橙‘s Blog | 咸鱼的博客</title>
 		<style>
 			body{
-				background: url(./img/bg.jpg) center;
-				background-repeat: no-repeat;
-				background-attachment: fixed;
-				background-size: cover;
+				background: #e9ecef;
+			}
+			a{
+				text-decoration:none;
 			}
 		</style>
 	</head>
 	<body>
+		<div id="preloader">
+			<img src="./img/preloader.png" height="64px" alt="">
+		</div>
+		<div class="container-fluid bg-light p-3">
+		    <h4 class="text-center" id="title">晓橙的Blog</h4>
+		</div>
 		<div class="container mt-5">
 			<div class="row">
-				<div class="col-md-4 mx-auto bg-light p-5 rounded text-center">
+				<div class="col-md-4 mx-auto bg-light p-5 rounded text-center" id="about">
 					<img src="https://q1.qlogo.cn/g?b=qq&nk=2043271366&s=640" class="img-thumbnail" width="128px" alt="">
 					<h4>晓橙的Blog's</h4>
 					<hr>
@@ -30,23 +35,33 @@
 					<p>我的Blog</p>
 					<p>随时都会更新一些新奇玩意儿</p>
 				</div>
-				<div class="col-md-7 mx-auto bg-light p-5 rounded text-center">
-					<h4>Ads | 广告</h4>
-					<h6>（可怜孩子吧，孩子都没钱了）</h6>
+				<div class="col-md-7 mx-auto p-5 bg-light rounded text-center">
+					
 				</div>
 			</div>
 		</div>
-		<div class="container mt-5">
-			<div class="bg-light p-5 rounded">
-				<h4 class="text-center">晓橙的Blog</h4>
+		<div class="col-md-11 m-auto mt-5 bg-light p-4 rounded">
 				<ul class="list-group" id="list"></ul>
-				<p class="text-center">到底了，看看别的吧...</p>
-			</div>
 		</div>
-		<div class="container my-5 py-3">
-			<p class="text-center text-light">© 2022 Xiao_orange Disign By Xiao_orange</p>
+		<div class="container py-3">
+			<p class="text-center">© 2022 Xiao_orange Disign By Xiao_orange</p>
 		</div>
 	</body>
 	<script src="./js/blog.js"></script>
-	<script>getlist();</script>
+	<script>
+		document.onreadystatechange = function(){
+		    if(document.readyState == 'complete'){
+		        document.getElementById("preloader").style.display="none";
+		    }
+		}
+	</script>
+	<script>
+		getlist();
+		var lang = (navigator.language || navigator.browserLanguage).toLowerCase();
+		if(lang.substring(0, 3) !== "zh-"){
+			document.getElementById("title").innerHTML="Xiaoorange's Blog";
+			document.getElementById("about").innerHTML="<img src='https://q1.qlogo.cn/g?b=qq&nk=2043271366&s=640' class='img-thumbnail' width='128px' alt=''> <h4>Xiaoorange's Blog</h4> <hr> <p>Update my news anytime</p> <p>Anywhere</p> <p>(Blog currently only supports Chinese)</p>";
+			document.title="Blog | Xiaoorange";
+		}
+	</script>
 </html>

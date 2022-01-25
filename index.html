@@ -8,10 +8,12 @@
     <meta name="keywords" content="晓橙,xiaoorange,xiao orange,xiao_orange">
 	<link rel="stylesheet" type="text/css" href="./css/perload.css">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
-	<script src="./js/preload.js"></script>
 </head>
 
 <body>
+	<div id="preloader">
+		<img src="./img/preloader.png" height="64px" alt="">
+	</div>
     <div id="box">
         <div class="meBox">
             <div class="headPhoto"></div>
@@ -19,14 +21,14 @@
                 <p>I'm Xiao_orange</p>
                 <div class="fg"></div>
             </div>
-            <div class="meBox-text">
+            <div class="meBox-text" id="aboutme">
                 <p>我叫晓橙，来自StarFours</p>
                 <p>目前是一名<b>学前教育</b>的大二狗</p>
 				<p>爱捣弄一些新鲜玩意儿</p>
 				<p>会网页设计和后端开发</p>
 				<p>只要钱够，啥都会！<p>
             </div>
-            <div class="meBox-Button">
+            <div class="meBox-Button" id="abb">
                 <a href="./blog.html">我的博客</a>
                 <a href="https://wpa.qq.com/msgrd?v=3&uin=2043271366&site=qq&menu=yes" target="_blank">我的企鹅</a>
             </div>
@@ -34,14 +36,14 @@
         <div id="explorerBox">
             <div class="explorer">
                 <div class="title">
-                    <span><img src="./img/file.png" style="width: 16px;vertical-align: middle;"> 自我介绍 - 记事本</span>
+                    <span id="extl"><img src="./img/file.png" style="width: 16px;vertical-align: middle;"> 自我介绍 - 记事本</span>
 					<div class="click">
 						<div class="red"></div>
 						<div class="light"></div>
 						<div class="light"></div>
 					</div>
 				</div>
-				<div class="top">
+				<div class="top" id="extop">
 					<span></span>
 					<span>文件</span>
 					<span>编辑</span>
@@ -49,7 +51,7 @@
 					<span>视图</span>
 					<span>帮助</span>
 				</div>
-                <div class="explorerData">
+                <div class="explorerData" id="explorer">
                     <iframe scrolling="no" src="https://tianqiapi.com/api.php?style=tc&skin=pitaya" frameborder="0"
                         width="350" height="18px" allowtransparency="true"></iframe>
                     <br />
@@ -62,20 +64,37 @@
                     <p>没有什么问题是不能解决的，从哪里跌倒，就在那里多趴一会儿...</p>
 					<p><br>不是...</p>
 					<p><br><b>人生不如意事十之八九,但愿剩下一二能够绝处逢生</b></p>
+					<p><br></p>
                 </div>
             </div>
         </div>
     </div>
     <div id="footer">
         <p>© 2022 Xiao_orange </p>
-        <p>DISIGN By Xiao_orange</p>
+        <p>Disign By Xiao_orange</p>
     </div>
 </body>
 <script>
-document.onreadystatechange = function(){
-    if(document.readyState == 'complete'){
-        document.getElementById("preloader").style.display="none";
-    }
-}
+	document.onreadystatechange = function(){
+		if(document.readyState == 'complete'){
+			document.getElementById("preloader").style.display="none";
+		}
+	}
+    var lang = (navigator.language || navigator.browserLanguage).toLowerCase();
+    if(lang.substring(0, 3) == "zh-"){
+        document.getElementById("aboutme").innerHTML="<p>我叫晓橙，来自StarFours</p><p>目前是一名<b>学前教育</b>的大二狗</p><p>爱捣弄一些新鲜玩意儿</p><p>会网页设计和后端开发</p><p>只要钱够，啥都会！<p>";
+		document.getElementById("explorer").innerHTML='<iframe scrolling="no" src="https://tianqiapi.com/api.php?style=tc&skin=pitaya" frameborder="0" width="350" height="18px" allowtransparency="true"></iframe> <br /> <p>没错，这么一个牛逼的人物</p> <p>竟然是一名<B>学前教育</b>的大二苦逼狗</p> <p>天妒英才啊！！！(bushi)</p> <p><br>主要爱好计算机，会去自学自己感兴趣的一切东西</p> <p>专注网页开发30年(虽然连30岁都不到)；爱好折腾去解决一切问题</p> <p><br>最主要是在我眼里</p> <p>没有什么问题是不能解决的，从哪里跌倒，就在那里多趴一会儿...</p> <p><br>不是...</p> <p><br><b>人生不如意事十之八九,但愿剩下一二能够绝处逢生</b></p> <p><br></p>';
+		document.getElementById("abb").innerHTML='<a href="./blog.html">我的博客</a> <a href="https://wpa.qq.com/msgrd?v=3&uin=2043271366&site=qq&menu=yes" target="_blank">我的企鹅</a>';
+		document.getElementById("extl").innerHTML="<img src='./img/file.png' style='width: 16px;vertical-align: middle;'> 自我介绍 - 记事本";
+		document.getElementById("extop").innerHTML="<span></span><span>文件</span><span>编辑</span><span>格式</span><span>视图</span><span>帮助</span>";
+		document.title="晓橙 | 一个热爱生活的咸鱼";
+	}else{
+        document.getElementById("aboutme").innerHTML="<p>So let me introduce myself first</p><p>My name is Xiaoorange, from StarFours</p><p>Sophomore majoring in <b>preschool education</b></p><p>Love all kinds of weird things</p><p>It's also a lazy salted fish<p>";
+        document.getElementById("explorer").innerHTML="<p>Yes, I'm currently a student majoring in <b>preschool education</b>.</p><p>Don't be surprised. Everything is possible.</p> <p><br>Programming is just one of my hobbies.</p> <p>Love everything in life and solve all problems</p> <p><br>I think there's nothing I can't solve in my eyes.</p> <p>Where you fall, lie down for a while...</p> <p><br>No no no... Is</p> <p><br><b>Nine times out of ten, life is not as good as one's will.</p><p>I hope the remaining one or two can survive</b></p> <p><br></p>";
+		document.getElementById("abb").innerHTML='<a href="./blog.html">My Blog</a> <a href="mailto:xiaoorange@starfours.cn" target="_blank">My Email</a>';
+		document.getElementById("extl").innerHTML="<img src='./img/file.png' style='width: 16px;vertical-align: middle;'> Self introduction - Notepad";
+		document.getElementById("extop").innerHTML="<span></span><span>File</span><span>Edit</span><span>Form</span><span>View</span><span>Help</span>";
+		document.title="Xiaoorange | salted fish who loves life";
+	}
 </script>
 </html>
