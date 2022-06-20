@@ -5,64 +5,53 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 		<meta name="description" content="这是晓橙的Blog，懒得写简介了将就着看一下吧！">
 		<meta name="keywords" content="晓橙,xiaoorange,xiao orange,xiao_orange,Blog">
-		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-		<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="./css/perload.css">
-		<script src="./js/jquery.min.js"></script>
-		<title>晓橙‘s Blog | 咸鱼的博客</title>
+		<title>晓橙的Blog</title>
+		<link rel="stylesheet" type="text/css" href="./css/preload.css">
+		<link rel="stylesheet" type="text/css" href="./css/blog.css">
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<style>
-			body{
-				background: #e9ecef;
-			}
-			a{
-				text-decoration:none;
-			}
+			.tap_center{margin-top: 35vh;color: #FAFAFA;text-align: center;font-size: 1.8rem;}.blink{animation: typedjsBlink 1s infinite;-webkit-animation: typedjsBlink 1s infinite;animation: typedjsBlink 1s infinite;}@keyframes typedjsBlink{50%{opacity:0.0}}@-webkit-keyframes typedjsBlink{0%{opacity:1}50%{opacity:0.0}100%{opacity:1}}
 		</style>
 	</head>
 	<body>
+		<!-- 预加载 -->
 		<div id="preloader" class="preloader">
 			<img src="./img/preloader.png" height="64px" alt="">
 		</div>
-		<div class="container-fluid bg-light p-3">
-		    <h4 class="text-center" id="title">晓橙的Blog</h4>
-		</div>
-		<div class="container mt-5">
-			<div class="row">
-				<div class="col-md-4 mx-auto bg-light p-5 rounded text-center" id="about">
-					<img src="https://q1.qlogo.cn/g?b=qq&nk=2043271366&s=640" class="img-thumbnail" width="128px" alt="">
-					<h4>晓橙的Blog's</h4>
-					<hr>
-					<p>你现在看到的是</p>
-					<p>我的Blog</p>
-					<p>随时都会更新一些新奇玩意儿</p>
-				</div>
-				<div class="col-md-7 mx-auto p-5 bg-light rounded text-center">
-					
+		<!-- 头部 -->
+		<header style="height: 100vh;background-image: url(./img/blog.jpg);padding-bottom: 96px;">
+			<div class="navber">
+				<a href="/blog.html"><b>晓橙's Blog</b></a>
+				<div class="nav-link">
+					<a href="/index.html">首页</a>
 				</div>
 			</div>
-		</div>
-		<div class="col-md-8 col-sm-11 m-auto mt-5 bg-light p-4 rounded">
-				<ul class="list-group" id="list"></ul>
-		</div>
-		<div class="container py-3">
-			<p class="text-center">© 2022 Xiao_orange Disign By Xiao_orange</p>
+			<div class="tap_center">
+				还是看到自己沉沦了吧 <span class="blink">_</span>
+			</div>
+		</header>
+		<!-- 主体部分 -->
+		<main>
+			<div class="box" style="margin-top: -128px;">
+				<h1>欢迎!</h1>
+				<p>这里是晓橙的Blog，记录我的各种美好生活！</p>
+				<p>我也会不定时的在这里，更新些新鲜货！</p>
+				<ul id="list"></ul>
+			</div>
+		</main>
+		<!-- 尾部 -->
+		<div class="footer">
+			&copy;Copyright Xiao_orange All.right<br>本博客由晓橙完成构建，未经许可，不得私自搬运文章内容
 		</div>
 	</body>
 	<script src="./js/blog.js"></script>
 	<script>
+		// 原生js操作预加载
 		document.onreadystatechange = function(){
-		    if(document.readyState == 'complete'){
-		        document.getElementById("preloader").style.display="none";
-		    }
+			if(document.readyState == 'complete'){
+				document.getElementById("preloader").style.display="none";
+			}
 		}
-	</script>
-	<script>
 		getlist();
-		var lang = (navigator.language || navigator.browserLanguage).toLowerCase();
-		if(lang.substring(0, 3) !== "zh-"){
-			document.getElementById("title").innerHTML="Xiaoorange's Blog";
-			document.getElementById("about").innerHTML="<img src='https://q1.qlogo.cn/g?b=qq&nk=2043271366&s=640' class='img-thumbnail' width='128px' alt=''> <h4>Xiaoorange's Blog</h4> <hr> <p>Update my news anytime</p> <p>Anywhere</p> <p>(Blog currently only supports Chinese)</p>";
-			document.title="Blog | Xiaoorange";
-		}
 	</script>
 </html>
