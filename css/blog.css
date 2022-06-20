@@ -1,0 +1,136 @@
+*{
+	text-decoration:none;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+header{
+	background-color: #fafafa;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+/* 主体区域 */
+main{
+	padding: 32px 0;
+	background-color: #eee;
+}
+main h1{
+	font-weight: 500;
+	font-size: 1.8rem;
+	line-height: 48px;
+}
+main h2{
+	font-size: 1.4rem;
+	line-height: 48px;
+}
+main p{
+	font-weight: 200;
+	font-size: 1rem;
+	line-height: 32px;
+}
+main ul{
+	list-style-type:none;
+	margin: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	padding-left: 0;
+	margin-bottom: 0;
+	border-radius: 0.25rem;
+}
+main li{
+	padding: 8px 0;
+	position: relative;
+	display: block;
+	color: #212529;
+	line-height: 32px;
+}
+main img{
+	display: inline-block;
+	vertical-align: middle;
+}
+/* 底部 */
+.footer{
+	color: #666;
+	padding: 24px 10%;
+	background-color: #333;
+}
+
+/* 预加载 */
+.preloader {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background-color: #fbfbfb;
+	z-index: 999999;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.preloader img {
+	height: 64px;
+    -webkit-transform: rotate(360deg);
+    animation: rotation 1s linear infinite;
+    -moz-animation: rotation 1s linear infinite;
+    -webkit-animation: rotation 1s linear infinite;
+    -o-animation: rotation 1s linear infinite;
+}
+
+/* 菜单栏 */
+.navber{
+    font-size: 1.25rem;
+	padding: 0 10%;
+	width: 80%;
+	background-color: rgb(255, 255, 255,0.125);
+	box-shadow: 0 5px 5px rgb(0, 0, 0,0.1);
+	color: #fbfbfb;
+	line-height: 48px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.navber a{
+	color: #fbfbfb;
+	text-decoration:none;
+}
+.nav-link a{
+	padding: 0.5em 0.8em;
+	padding-left: 0;
+	font-size: 0.8em;
+}
+/* 组件 */
+.box{
+	background-color: #FAFAFA;
+	margin: 16px 10%;
+	padding: 2em;
+	box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+	border-radius: 16px;
+}
+
+/* 手机端适应 */
+@media only screen and (max-width: 767px) {
+	.box{
+		margin: 0;
+	}
+}
