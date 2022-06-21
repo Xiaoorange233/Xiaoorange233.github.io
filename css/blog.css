@@ -46,10 +46,6 @@ main li{
 	color: #212529;
 	line-height: 32px;
 }
-main img{
-	display: inline-block;
-	vertical-align: middle;
-}
 /* 底部 */
 .footer{
 	color: #666;
