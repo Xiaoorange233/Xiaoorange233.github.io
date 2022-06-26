@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="./css/blog.css">
 		<link rel="stylesheet" type="text/css" href="./css/icon.css">
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 		<style>
 			.tap_center{margin-top: 35vh;color: #FAFAFA;text-align: center;font-size: 1.8rem;}.blink{animation: typedjsBlink 1s infinite;-webkit-animation: typedjsBlink 1s infinite;animation: typedjsBlink 1s infinite;}@keyframes typedjsBlink{50%{opacity:0.0}}@-webkit-keyframes typedjsBlink{0%{opacity:1}50%{opacity:0.0}100%{opacity:1}}
 		</style>
@@ -26,6 +27,7 @@
 				<div class="nav-link">
 					<a href="./index.html"><i class="icon-home"></i>首页</a>
 					<a href="./blog.html"><i class="icon-write"></i>Blog</a>
+					<a onclick="logout()" id="nav_user">使用Github登录</a>
 				</div>
 			</div>
 			<div class="tap_center">
@@ -55,5 +57,18 @@
 			}
 		}
 		getlist();
+		if($.cookie('gh_token')){
+			$('#nav_user').html($.cookie('gh_user')+' | 注销');
+		}
+		function logout(){
+			if($.cookie('gh_token')){
+				$.cookie('gh_token','');
+				$.cookie('gh_user','');
+				$.cookie('gh_avatar','');
+				window.location.reload();
+			}else{
+				window.location.href="https://github.com/login/oauth/authorize?client_id=60475f542c2c31dde902";
+			}
+		}
 	</script>
 </html>

@@ -24,24 +24,16 @@
 		<header style="height: 30vh;background-image: url(./img/blog.jpg);padding-bottom: 96px;">
 			<div class="navber">
 				<a href="./blog.html"><b>Free Fish</b></a>
-				<div class="nav-link">
-					<a href="./index.html"><i class="icon-home"></i>首页</a>
-					<a href="./blog.html"><i class="icon-write"></i>Blog</a>
-					<a onclick="logout()" id="nav_user">使用Github登录</a>
-				</div>
 			</div>
-			<div class="tap_center">
-				<span id="blog_title">等等我马上好</span><span class="blink">_</span>
+			<div class="tap_center" id="title">
+				登录中<span class="blink">...</span>
 			</div>
 		</header>
 		<!-- 主体部分 -->
 		<main>
-			<div class="box" style="margin-top: -128px;">
-				<div id="blog_body">
-					<h1>正在努力奔跑中...</h1>
-					<p>长时间看到我的话，建议你刷新后看看哦！</p>
-				</div>
-				<div id="talk" class="talk_box"></div>
+			<div class="box" style="margin-top: -128px;text-align: center;" id="box">
+				<h1>正在登录中...</h1>
+				<p>如果长时间待在此界面，请刷新再试</p>
 			</div>
 		</main>
 		<!-- 尾部 -->
@@ -57,19 +49,6 @@
 				document.getElementById("preloader").style.display="none";
 			}
 		}
-		getbody();
-		if($.cookie('gh_token')){
-			$('#nav_user').html($.cookie('gh_user')+' | 注销');
-		}
-		function logout(){
-			if($.cookie('gh_token')){
-				$.cookie('gh_token','');
-				$.cookie('gh_user','');
-				$.cookie('gh_avatar','');
-				window.location.reload();
-			}else{
-				window.location.href="https://github.com/login/oauth/authorize?client_id=60475f542c2c31dde902&state="+getvalue('page')
-			}
-		}
+		login();
 	</script>
 </html>
