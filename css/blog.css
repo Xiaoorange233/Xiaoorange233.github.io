@@ -53,45 +53,6 @@ main li{
 	background-color: #333;
 }
 
-/* 预加载 */
-.preloader {
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-	background-color: #fbfbfb;
-	z-index: 999999;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
-}
-
-@-webkit-keyframes rotation {
-    from {
-        -webkit-transform: rotate(0deg);
-    }
-    to {
-        -webkit-transform: rotate(360deg);
-    }
-}
-
-.preloader img {
-	height: 64px;
-    -webkit-transform: rotate(360deg);
-    animation: rotation 1s linear infinite;
-    -moz-animation: rotation 1s linear infinite;
-    -webkit-animation: rotation 1s linear infinite;
-    -o-animation: rotation 1s linear infinite;
-}
-
 /* 菜单栏 */
 .navber{
     font-size: 1.25rem;
@@ -124,9 +85,143 @@ main li{
 	border-radius: 16px;
 }
 
+/* 评论区 */
+.talk_box{
+	margin-top: 1rem;
+	box-sizing: border-box;
+}
+.talk_box *{
+	box-sizing: border-box;
+}
+.talk_box .top{
+	margin: 1.25em 0;
+    padding: 1em 0;
+    position: relative;
+    border-bottom: 1px solid #e9e9e9;
+    font-size: 1em;
+    position: relative;
+    z-index: 10;
+}
+.talk_box .top .user{
+	float: right;
+}
+.talk_box .top .user a{
+	color: black;
+	text-decoration: none;
+}
+.talk_box .header{
+	position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.talk_box .avatar{
+	display: inline-block;
+	width: 3em;
+	height: 3em;
+	cursor: pointer;
+}
+.talk_box .avatar .ico{
+	width: 100%;
+	height: 100%;
+}
+.talk_box .header .input_box{
+	margin: 0 1.25rem;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+.talk_box .header .input_box textarea{
+	padding: 0.75em;
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 5.125em;
+    max-height: 15em;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+    font-size: 0.875em;
+    word-wrap: break-word;
+    resize: vertical;
+    background-color: #f6f6f6;
+    outline: none;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+.talk_box .controls{
+	position: relative;
+    margin: 0.75em 0 0;
+}
+.talk_box .btn{
+	padding: 0.75em 1.25em;
+    display: inline-block;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+    font-size: 0.75em;
+	box-sizing: border-box;
+	text-align: center;
+}
+.talk_box .comments{
+	padding-top: 1.25em;
+	position: relative;
+}
+.talk_box .comments .comments_box{
+	position: relative;
+    padding: 0.625em 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	transform-origin: center top;
+}
+.talk_box .comments .comments_box .comments_body{
+	-webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin-left: 0.875em;
+    padding: 0.625em 0.75em;
+    background-color: #f1f2f6;
+    overflow: auto;
+    -webkit-transition: all ease 0.25s;
+    transition: all ease 0.25s;
+}
+.talk_box .comments .comments_box .body_head{
+	font-size: 0.875rem;
+}
+.talk_box .comments .comments_box .body_head a{
+	font-weight: bold;
+	color: #1e90ff;
+	text-decoration: none;
+}
+.talk_box .comments .comments_box .body_head span{
+	margin-left: 0.8em;
+	color: #2f3542;
+}
+.talk_box .comments .comments_box .body_head .admin{
+	color: #ff4757;
+}
+
 /* 手机端适应 */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 479px) {
 	.box{
 		margin: 0;
+	}
+	/* 评论区 */
+	.talk_box .header .input_box{
+		margin: 0 1.25rem;
+	}
+	.talk_box .btn{
+		width: 100%;
+	}
+	.talk_box .avatar{
+		width: 2em;
+		height: 2em;
 	}
 }
